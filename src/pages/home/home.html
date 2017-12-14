@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>iWeather</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="home"> <!--class="home"-->
+  <ion-grid *ngIf="weather">
+    <ion-row>
+      <ion-col width-50 offset-25>
+        <h2 class="location">{{ weather.sys.country }}, {{ weather.name }}</h2>
+        <!-- <h2 class="location">{{ weather.coord.lat }}</h2> -->
+        <div>{{ weather.weather.description }}</div>
+        <div>Minimum Temperature: {{ weather.main.humidity }}&deg;</div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col width-100>
+        <strong>Temp:</strong> {{ weather.main.temp }}&deg;
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
